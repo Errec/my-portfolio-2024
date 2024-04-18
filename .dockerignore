@@ -1,0 +1,35 @@
+# Ignore node modules
+node_modules/
+
+# Ignore TypeScript compiled directory
+dist/
+
+# Ignore logs
+logs
+*.log
+
+# Ignore the npm packages lock files
+package-lock.json
+yarn.lock
+
+# Ignore the .env file which usually contains sensitive information
+.env
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Ignore IDE related directories
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ignore Parcel's cache
+.cache/
