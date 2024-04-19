@@ -1,7 +1,6 @@
 {
     "name": "my-portfolio-2024",
     "version": "1.0.0",
-    "main": "index.js",
     "author": "raniro",
     "license": "MIT",
     "scripts": {
