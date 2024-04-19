@@ -6,7 +6,7 @@
     "license": "MIT",
     "scripts": {
         "start": "parcel src/index.pug --port 1234",
-        "build": "parcel build src/index.pug -d dist"
+        "build": "parcel build src/index.pug --dist-dir dist"
     },
     "devDependencies": {
         "@parcel/transformer-pug": "^2.12.0",
