@@ -1,32 +1,51 @@
-name: Deploy to GitHub Pages # Name of the workflow
+name: Build and Deploy to GitHub Pages
 
-on: # Specifies the event(s) that triggers the workflow
-  push:
-    branches:
-      - main # Trigger the workflow on a push to the master branch
+# Defines when the workflow should run. Triggers on pushes and pull requests to the main branch.
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
 
-jobs: # Jobs to be executed. These run in parallel by default.
-  build-and-deploy:
-    runs-on: ubuntu-latest # Specifies the type of virtual host machine to run the job on
+# Defines the jobs to run in this workflow.
+jobs:
+    build-and-deploy:
+        # Specifies the type of runner that the job will run on.
+        runs-on: ubuntu-latest
 
-    steps: # Steps represent a sequence of tasks to be performed
-      - name: Checkout Code # Human-readable name for this step
-        uses: actions/checkout@v2 # Uses a pre-built action to check out the repository code
+        steps:
+        # Step to checkout the repository so the workflow can access it.
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16" # You can also use '18' or '20' based on your preference
+        # Sets up a specific version of Node.js to ensure compatibility with the project's dependencies.
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+              node-version: '16'  # This version should be compatible with all dependencies.
 
-      - name: Install Dependencies
-        run: yarn install # Runs a command to install dependencies
+        # Clears Yarn cache to prevent any cached dependencies from affecting new installations.
+        - name: Clear Yarn cache
+          run: yarn cache clean
 
-      - name: Build the Project
-        run: yarn build # Command to build your project
+        # Installs dependencies ensuring any updates are forced, ignoring potential lock files.
+        - name: Install dependencies
+          run: yarn install --force
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages # The branch to deploy to
-          folder: dist # The directory to deploy from
-          token: ${{ secrets.GITHUB_TOKEN }} # Uses a built-in GitHub token for authentication
+        # Outputs the version of Parcel being used to help diagnose version-related issues.
+        - name: Check Parcel version
+          run: npx parcel --version
+
+        # Builds the project using Parcel; configured to output the build to the 'dist' directory.
+        - name: Build
+          run: yarn build
+
+        # Deploys the content of the 'dist' directory to the 'gh-pages' branch, utilizing a GitHub token for authentication.
+        - name: Deploy to GitHub Pages
+          uses: JamesIves/github-pages-deploy-action@4.1.4
+          with:
+              branch: gh-pages
+              folder: dist
+              token: ${{ secrets.GITHUB_TOKEN }}
