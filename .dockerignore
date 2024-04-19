@@ -8,10 +8,6 @@ dist/
 logs
 *.log
 
-# Ignore the npm packages lock files
-package-lock.json
-yarn.lock
-
 # Ignore the .env file which usually contains sensitive information
 .env
 
