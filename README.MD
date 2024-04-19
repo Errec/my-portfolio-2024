@@ -72,17 +72,6 @@ docker-compose up --build
 
 The output will be stored in the dist directory, ready for deployment.This command builds the image (if necessary) and starts the container, applying the configurations set in docker-compose.yml. The --build flag ensures that Docker rebuilds the image if there have been changes to the Dockerfile or to any files not included in the volume (like package.json).
 
-## Using Docker for Development
-
-To build the Docker image and run it:
-
-```bash
-docker build -t my-static-site .
-docker run -p 8080:80 my-static-site
-```
-
-This isolates your development environment to ensure consistency across different machines.
-
 ## **Continuous Integration and Deployment**
 
 ### GitHub Actions
