@@ -36,7 +36,7 @@ jobs:
 
         # Outputs the version of Parcel being used to help diagnose version-related issues.
         - name: Check Parcel version
-          run: npx -p ./node_modules/parcel --version
+          run: npx parcel --version
 
         # Builds the project using Parcel; configured to output the build to the 'dist' directory.
         - name: Build
