@@ -18,5 +18,8 @@
         "pug": "^3.0.2",
         "sass": "^1.75.0",
         "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "parcel": "^2.12.0"
     }
 }
