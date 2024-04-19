@@ -1,14 +1,13 @@
-FROM node:14
+# Use Node.js 16 LTS
+FROM node:16
 
-# Set working directory in the container
 WORKDIR /app
 
-# Install dependencies
 COPY package.json yarn.lock ./
+
 RUN yarn install
 
-# Copy everything else
+# Copy the rest of your app's source code from your host to your image filesystem.
 COPY . .
 
-# Command to run on container start
 CMD ["yarn", "start"]
