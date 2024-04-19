@@ -16,7 +16,7 @@ jobs: # Jobs to be executed. These run in parallel by default.
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14" # Set the Node.js version
+          node-version: "16" # You can also use '18' or '20' based on your preference
 
       - name: Install Dependencies
         run: yarn install # Runs a command to install dependencies
