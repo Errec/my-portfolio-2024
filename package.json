@@ -14,7 +14,7 @@
         "@types/lodash": "^4.17.0",
         "live-server": "^1.2.2",
         "lodash": "^4.17.21",
-        "parcel": "^2.0.0",
+        "parcel": "^2.12.0",
         "parcel-bundler": "^1.12.5",
         "pug": "^3.0.2",
         "sass": "^1.75.0",
