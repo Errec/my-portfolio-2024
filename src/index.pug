@@ -23,6 +23,10 @@ html(lang="en")
 
         link(rel="stylesheet", href="styles/index.sass")
         script(defer, src="scripts/index.ts")
+
     body
         header.header
             include templates/header.pug
+        main.main
+            section.main-slogan
+                include templates/main-slogan.pug
