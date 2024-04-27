@@ -1,0 +1,19 @@
+div.main-hero__left-hand#left-hand
+    img(alt='Left Hand Image')
+    div.main-hero__boxes
+        div#box-wrapper.main-hero__box-wrapper.hero__box--state-0
+            // Define array of box texts and styles
+            - const boxes = [
+            -     { class: 'small', text: '[', index: 0 },
+            -     { class: 'small', text: '"', index: 1 },
+            -     { class: 'large', text: 'Hello', index: 2 },
+            -     { class: 'large', text: 'World', index: 3 },
+            -     { class: 'small', text: '"', index: 4 },
+            -     { class: 'small', text: ']', index: 5 }
+            - ]
+            // Generate each box using loop
+            each box in boxes
+                p.hero__box(class=`hero__box--${box.class} hero__box-${box.index}`)= box.text
+
+div.main-hero__right-hand#right-hand
+    img(alt='Right Hand Image')
