@@ -1,0 +1,16 @@
+span.header__logo-svg
+    img(alt="Porfolio Logo")
+
+span.header__logo-name(aria-label="Errec company name") Errec
+
+div.header__nav-container
+    nav.header__nav
+        ul.header__row
+            // Define navigation links with corresponding names and endpoints
+            - const links = [{name: 'skills', label: 'View skills'}, {name: 'projects', label: 'View projects'}, {name: 'about', label: 'Learn about us'}]
+            each link in links
+                li.header__list
+                    // Navigation link with dynamic ARIA label for better accessibility
+                    a(class=`header__link-${link.name}` href=`#${link.name}` aria-label=link.label) #{link.label}
+                        // Underline effect for visual enhancement on hover
+                        div.header__list--underline
