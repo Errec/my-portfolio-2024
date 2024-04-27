@@ -2,29 +2,14 @@ doctype html
 html(lang="en")
     head
         meta(charset="UTF-8")
-        title Raniro Coelho | Front-End Developer Portfolio
-        meta(name="description", content="Raniro Coelho's portfolio showcasing skills, experience, and projects.")
-        meta(name="viewport", content="width=device-width, initial-scale=1")
-        link(rel="canonical", href="https://Errec.github.io/my-portfolio-2024")
-
+        // Include meta tags for base URL, title, and description
+        include meta/content.pug
         // Open Graph / Facebook
-        meta(property="og:type", content="website")
-        meta(property="og:url", content="https://Errec.github.io/my-portfolio-2024")
-        meta(property="og:title", content="Raniro Coelho | Portfolio")
-        meta(property="og:description", content="Raniro Coelho's portfolio showcasing skills, experience, and projects.")
-        meta(property="og:image", content="")
-        // TODO: add img src content
-
+        include meta/SEO-og-facebook.pug
         // Twitter
-        meta(property="twitter:card", content="summary_large_image")
-        meta(property="twitter:url", content="https://Errec.github.io/my-portfolio-2024")
-        meta(property="twitter:title", content="Raniro Coelho | Portfolio")
-        meta(property="twitter:description", content="Raniro Coelho's portfolio showcasing skills, experience, and projects.")
-        meta(property="twitter:image", content="")
-        // TODO: add img src content
+        include meta/SEO-twitter-x.pug
 
         link(rel="stylesheet", href="styles/index.sass")
-        script(defer, src="scripts/index.ts")
 
     body
         header.header
@@ -42,3 +27,5 @@ html(lang="en")
                 include templates/main-about.pug
         footer.footer
             include templates/footer.pug
+        
+        script(defer, src="scripts/index.ts")
