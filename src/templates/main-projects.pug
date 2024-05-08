@@ -1,0 +1,19 @@
+- var projects = [
+-   { id: "codepen", href: "https://codepen.io/Errec/full/ZprVwZ/", ariaLabel: "View project on CodePen" },
+-   { id: "enfermagem", href: "https://enfermagem.surge.sh", ariaLabel: "View nursing project" },
+-   { id: "supernintendo", href: "https://supernintendo.surge.sh", ariaLabel: "View Super Nintendo project" },
+-   { id: "tictactoesimon", href: "https://tictactoesimon.surge.sh", ariaLabel: "View Tic Tac Toe Simon project" },
+-   { id: "twitchlist", href: "http://twitchlist.surge.sh/", ariaLabel: "View Twitch List project" }
+- ]
+// TODO: update projects
+
+h2.main-project__title Projects
+
+div.main-project__wrapper
+    ul.main-project__grid
+        // Loop over each project in the projects list to generate project items
+        each project in projects
+            li.main-project__item--grow.main-project__item(id=`project-${project.id}`)
+                a(href=project.href aria-label=project.ariaLabel)
+                    div.main-project__img(id=`project-img-${project.id}`)
+                    span.main-project__img-overlay

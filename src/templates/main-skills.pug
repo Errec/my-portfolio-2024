@@ -1,0 +1,8 @@
+h2.main-skills__title Skills
+div.main-skills__wrapper
+    // This list dynamically creates skill icons for each technology listed in the array
+    ul#skills-grid.main-skills__grid(role="list")
+        - const skills = ['html', 'js', 'css', 'git', 'bootstrap', 'gulp', 'vue', 'ps', 'node', 'react', 'sass', 'wp'] // TODO: update skills
+        each skill in skills
+            li.main-skills__item(role="listitem")
+                // img(src=`skills-svg/${skill}.svg`, alt=`${skill} skill icon`, role="img", aria-label=`${skill} technology`) // TODO: Add SVGs

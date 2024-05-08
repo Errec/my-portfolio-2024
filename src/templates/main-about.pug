@@ -1,0 +1,25 @@
+section.main-about__personal-info
+    h3 ABOUT ME
+        p I'm a Senior Front-end Developer looking for innovative projects. Interested? Reach out!
+        p My portfolio showcases custom-built sites and work sections using the latest technologies. Explore my code on Github.
+
+section.main-about__contact
+    h3 HEY!
+    // Improved form security by using HTTPS and adding server-side URL // TODO: Add JS to new form and create new form ID
+    form#about-form.main-about__form(method="POST" action="http://formspree.io/{MY_NEW_ID}")
+        input#input-email.main-about__input.field-input(type="email" name="email" placeholder="E-MAIL" aria-label="Email")
+        input.main-about__input.field-input(type="text" name='name' placeholder="NAME" aria-label="Name")
+        textarea#input-message.main-about__input.textarea-input(name="message" placeholder="YOUR MESSAGE" aria-label="Your Message")
+        button#input-btn.main-about__input.send-btn(type="submit") Send
+
+section.main-about__social
+    h3 SOCIAL
+    ul.main-about__icon-row
+        each site, index in {"github": "https://github.com/errec", "codepen": "https://codepen.io/Errec/", "linkedin": "https://linkedin.com/in/raniro/", "twitter": "https://twitter.com/errecme", "fcc": "https://www.freecodecamp.com/errec"}
+            li.main-about__icon-list
+                // Using img tags with dynamic src based on the index
+                a(href=site target="_blank" rel="noopener noreferrer")
+                    // img(src=`./img/social-icons/${index}.svg`, alt=`${index} icon`) // TODO: Add src social icon images
+
+div#about-parallax-img.main-about__parallax-wrapper
+    // img.main-about__parallax-img(src="./img/foot-bg.png", alt="Decorative Background") // TODO: Add src footer background image
