@@ -1,1 +1,0 @@
-{"mappings":"ACAA","sources":["index.c55ca9bb.css","src/styles/index.sass"],"sourcesContent":["body {\n  color: #623;\n  font-family: Arial, sans-serif;\n  font-size: 16px;\n}\n/*# sourceMappingURL=index.c55ca9bb.css.map */\n","body\n    font-size: 16px\n    color: #623\n    font-family: 'Arial', sans-serif\n"],"names":[],"version":3,"file":"index.c55ca9bb.css.map"}
