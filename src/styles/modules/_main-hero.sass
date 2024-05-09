@@ -23,14 +23,14 @@
     top: 10%
     transform: rotate(25deg) translateX(-35%) translateY(-2%)
     &--move
-        transition: transform 1s cubic-bezier(0.12, -0.42, 0.9, 1.17)
+        transition: transform 1s var.animation('hand-transition-time')
         transform: rotate(15deg) translate3d(-20%, 0%, 0)
 .main-hero__right-hand
     transform: rotate(-1deg) translateX(16%) translateY(-40%)
     right: 0
     top: 0
     &--move
-        transition: transform 1s cubic-bezier(0.12, -0.42, 0.9, 1.17)
+        transition: transform 1s var.animation('hand-transition-time')
         transform: rotate(5deg) translate3d(8%,-25%,0)
 .main-hero__boxes
     padding: 0 4% 0 4%
@@ -56,4 +56,4 @@
     height: 10%
     display: inline-block
     margin-bottom: 35%
-    background: var.color('light')
+    background: var.color('dark')
