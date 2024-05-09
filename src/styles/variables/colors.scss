@@ -1,0 +1,10 @@
+$colors: (
+    dark: #151515,
+    light: #F4F4F4,
+    highlight: #7A7A7A,
+    font-base: #9F9F9F
+) !default;
+
+@function color($key) {
+    @return map-get($colors, $key);
+}

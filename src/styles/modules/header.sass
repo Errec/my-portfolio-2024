@@ -1,11 +1,11 @@
-@use '../abstracts/variables' as vars
+@use '../variables' as var
 
 .header
     width: 100%
     height: 20vh
     display: inline-block
-    margin-top: vars.padding('bt-lg')
-    padding: 0 vars.padding('lr-lg')
+    margin-top: var.padding('bt-lg')
+    padding: 0 var.padding('lr-lg')
     &__logo-name
         position: absolute
         color: transparent
@@ -18,21 +18,21 @@
         text-align: right
     &__list
         display: inline-block
-        margin-left: vars.padding('lr-lg')
+        margin-left: var.padding('lr-lg')
         a
             cursor: pointer
             font-size: 160%
-            color: vars.color('fontbase')
+            color: var.color('font-base')
             letter-spacing: 0.2em
             text-decoration: none
             transition: all 0.25s ease-in-out 0.001s
             &:hover
-                color: vars.color('light')
+                color: var.color('light')
             &:hover > .header__list--underline
                 width: 100%
-                background-color: vars.color('light')
+                background-color: var.color('light')
     &__list--underline
-        background-color: vars.color('highlight')
+        background-color: var.color('highlight')
         margin-top: 0.1em
         height: 0.1em
         width: 0
