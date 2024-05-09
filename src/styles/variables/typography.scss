@@ -1,0 +1,10 @@
+$fonts: (
+    size-base: 0.9375rem,
+    size-small: 0.8rem,
+    size-large: 1.25rem,
+    line: 1.25rem
+) !default;
+
+@function font($key) {
+    @return map-get($fonts, $key);
+}

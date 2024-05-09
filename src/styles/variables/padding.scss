@@ -1,0 +1,12 @@
+$padding: (
+    lr-lg: 60px,
+    bt-lg: 40px,
+    lr-md: 40px,
+    bt-md: 20px,
+    lr-sm: 20px,
+    bt-sm: 10px
+) !default;
+
+@function padding($key) {
+    @return map-get($padding, $key);
+}
