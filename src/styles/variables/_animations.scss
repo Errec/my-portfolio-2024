@@ -1,0 +1,7 @@
+$animations: (
+    hand-transition-time: cubic-bezier(0.12, -0.42, 0.9, 1.17)
+) !default;
+
+@function animation($key) {
+    @return map-get($animations, $key);
+}

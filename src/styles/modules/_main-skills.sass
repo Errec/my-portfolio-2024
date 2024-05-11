@@ -1,0 +1,30 @@
+@use '../variables' as var
+
+.main-skills
+    background-color: var.color('light')
+    color: var.color('dark')
+    display: block
+
+.main-skills__title
+    -webkit-margin-before: 0
+    font-size: var.font('size-title')
+    margin-bottom: var.padding('bt-md')
+    padding: 0 var.padding('lr-lg') var.padding('bt-lg') var.padding('lr-lg')
+
+.main-skills__grid
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    justify-content: space-between
+    list-style: none
+
+.main-skills__item
+    min-width: 3.75rem
+    width: 7.5rem
+    margin: 0 var.padding('lr-lg')*1.5 var.padding('bt-md')*2 var.padding('lr-lg')*1.5
+
+.main-skills__svg > *
+    transition: all var.animation('transition-time') ease-in-out
+
+.main-skills__svg--fill
+    fill: var.color('dark')
