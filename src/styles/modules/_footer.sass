@@ -1,0 +1,81 @@
+@use '../variables' as var
+
+.footer
+    pointer-events: none
+    height: 35vh
+    z-index: 2000
+    overflow: hidden
+    position: absolute
+    width: 100%
+    padding: 0
+    margin: 0
+    bottom: 0
+
+.footer__text
+    text-shadow: 2px 2px var.color('dark')
+    line-height: 1
+    position: absolute
+    bottom: -10%
+    right: var.padding('lr-lg')
+    text-align: end
+    color: var.color('light')
+    font-size: 2rem
+    font-weight: bold
+
+.footer__pin-wrapper
+    pointer-events: all
+    cursor: pointer
+    width: 75px
+    height: 75px
+    position: absolute
+    left: 0
+    right: 0
+    top: 60%
+    margin: 0 auto
+    transform: translateY(-50%)
+
+.footer__pin
+    width: 100%
+    height: 100%
+    animation: xAxis-exit 1.2s forwards
+    position: relative
+    &:after
+        animation: yAxis-exit 1.4s cubic-bezier(0.45,-1.19, 0.16, 1.57) forwards
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        background:
+            size: contain
+            repeat: no-repeat
+            position: center
+            // image: url("../img/pin.svg") TODO: Add svg
+
+.footer__pin--enter
+    animation: xAxis-enter 0.5s forwards
+    &:after
+        animation: yAxis-enter 0.7s cubic-bezier(0.46, 0.03, 0.6, 1.61) forwards
+
+@keyframes yAxis-enter
+    0%
+        transform: translateY(20vh) rotate(90deg)
+    100%
+        transform: translateY(0) rotate(0deg)
+
+@keyframes xAxis-enter
+    0%
+        transform: translateX(20vw)
+    100%
+        transform: translateX(0)
+
+@keyframes yAxis-exit
+    99.9%
+        transform: translateY(50vh)
+    100%
+        transform: translateY(50vh) rotate(90deg)
+
+@keyframes xAxis-exit
+    99.9%
+        transform: translateX(0)
+    100%
+        transform: translateX(20vw)
