@@ -15,11 +15,21 @@ section.main-about__contact
 section.main-about__social
     h3 SOCIAL
     ul.main-about__icon-row
-        each site, index in {"github": "https://github.com/errec", "codepen": "https://codepen.io/Errec/", "linkedin": "https://linkedin.com/in/raniro/", "twitter": "https://twitter.com/errecme", "fcc": "https://www.freecodecamp.com/errec"}
-            li.main-about__icon-list
-                // Using img tags with dynamic src based on the index
-                a(href=site target="_blank" rel="noopener noreferrer")
-                    // img(src=`./img/social-icons/${index}.svg`, alt=`${index} icon`) // TODO: Add src social icon images
+        li.main-about__icon-list
+            a(href="https://github.com/errec" target="_blank" rel="noopener noreferrer")
+                include ../assets/svg/social/github.pug
+        li.main-about__icon-list
+            a(href="https://codepen.io/Errec/" target="_blank" rel="noopener noreferrer")
+                include ../assets/svg/social/codepen.pug
+        li.main-about__icon-list
+            a(href="https://linkedin.com/in/raniro/" target="_blank" rel="noopener noreferrer")
+                include ../assets/svg/social/linkedin.pug
+        li.main-about__icon-list
+            a(href="https://twitter.com/errecme" target="_blank" rel="noopener noreferrer")
+                include ../assets/svg/social/twitter.pug
+        li.main-about__icon-list
+            a(href="https://www.freecodecamp.com/errec" target="_blank" rel="noopener noreferrer")
+                include ../assets/svg/social/fcc.pug
 
 div#about-parallax-img.main-about__parallax-wrapper
-    // img.main-about__parallax-img(src="./img/foot-bg.png", alt="Decorative Background") // TODO: Add src footer background image
+    img.main-about__parallax-img(src="./assets/images/foot-bg.png", alt="Decorative Background")
