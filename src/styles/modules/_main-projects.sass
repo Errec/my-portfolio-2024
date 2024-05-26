@@ -1,12 +1,14 @@
 @use '../variables' as var
 
+$flex-values: 11, 8, 6, 4, 2
+
 .main-project
     display: block
     padding-bottom: var.padding('bt-lg')
 
 .main-project__title
     font-size: 3rem
-    padding: 0 var.padding('lr-lg') 0 var.padding('lr-lg')
+    padding: 0 var.padding('lr-lg')
 
 .main-project__grid
     display: flex
@@ -16,6 +18,7 @@
 
 .main-project__item
     transition: all 0.5s ease-in-out 0.3s
+    height: 78vh
 
 .main-project__img
     background:
@@ -26,16 +29,6 @@
     width: 100%
     outline: solid var.color('dark') 0.25em
 
-#pli-0
-    flex: 11
-#pli-1
-    flex: 8
-#pli-2
-    flex: 6
-#pli-3
-    flex: 4
-#pli-4
-    flex: 2
-
-.main-project__item
-    height: 78vh
+@for $i from 0 through length($flex-values) - 1
+    #pli-#{$i}
+        flex: nth($flex-values, $i + 1)

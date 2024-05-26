@@ -1,0 +1,20 @@
+@use '../variables' as var
+
+$project-img-names-large: "weather", "map", "snes", "ttts", "twitch"
+
+@media screen and (min-width: 721px)
+    .main-project__img--large
+        display: block
+
+    .main-project__img--small
+        display: none
+
+    @for $i from 0 through 4
+        #wli-#{$i}
+            &:hover
+                filter: none
+                flex: 110
+
+    @for $i from 1 through length($project-img-names-large)
+        #project-img-#{$i}
+            background-image: url("../assets/images/slider/#{nth($project-img-names-large, $i)}_large.png")
